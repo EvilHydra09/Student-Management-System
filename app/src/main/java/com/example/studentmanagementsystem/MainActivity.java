@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent isplash=new Intent(MainActivity.this,homeactivity.class);
+                Intent isplash=new Intent(getApplicationContext(),Register.class);
                 startActivity(isplash);
                 finish();
             }
