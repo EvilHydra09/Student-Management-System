@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -42,6 +43,7 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         names = findViewById(R.id.name);
         phones = findViewById(R.id.phone);
         emails = findViewById(R.id.email);
@@ -53,14 +55,14 @@ public class Register extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mStore = FirebaseFirestore.getInstance();
         if(mAuth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(),homeactivity.class));
+            startActivity(new Intent(getApplicationContext(), LoginPage.class));
             finish();
         }
 
         signintxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),homeactivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginPage.class);
                 startActivity(intent);
             }
         });
@@ -127,7 +129,7 @@ public class Register extends AppCompatActivity {
                                     Log.d("OnFailure","User Profile is created of "+ e.toString());
                                 }
                             });
-                            startActivity(new Intent(getApplicationContext(),homeactivity.class));
+                            startActivity(new Intent(getApplicationContext(), LoginPage.class));
                         }
                         else {
                             Toast.makeText(Register.this, "Error "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
