@@ -66,7 +66,7 @@ public class LoginPage extends AppCompatActivity {
                 }
                 mremember.setVisibility(View.VISIBLE);
 
-                mauth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                mauth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
