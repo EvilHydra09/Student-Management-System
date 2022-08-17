@@ -45,6 +45,7 @@ public class LoginPage extends AppCompatActivity {
         mauth = FirebaseAuth.getInstance();
 
 
+
         msignuptxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
