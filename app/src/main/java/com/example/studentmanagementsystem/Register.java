@@ -111,7 +111,11 @@ public class Register extends AppCompatActivity {
                                     Log.d("Fail","Email not Send"+e.getMessage());
                                 }
                             });
+
+
                             Toast.makeText(getApplicationContext(), "User Created", Toast.LENGTH_SHORT).show();
+
+                            // Data Storing
                             userId = mAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = mStore.collection("user").document(userId);
                             Map<String,Object> user = new HashMap<>();
@@ -129,6 +133,11 @@ public class Register extends AppCompatActivity {
                                     Log.d("OnFailure","User Profile is created of "+ e.toString());
                                 }
                             });
+
+
+
+
+
                             startActivity(new Intent(getApplicationContext(), HomePage.class));
                         }
                         else {
