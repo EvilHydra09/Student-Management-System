@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class LoginPage extends AppCompatActivity {
     TextView mforget,msignuptxt;
     CheckBox mremember;
     Button msign;
+    ProgressBar progressBar;
 
     FirebaseAuth mauth;
     FirebaseFirestore mstore;
@@ -48,7 +50,13 @@ public class LoginPage extends AppCompatActivity {
         mforget = findViewById(R.id.forgetp);
         msign = findViewById(R.id.signinbut);
         mremember = findViewById(R.id.remember);
+        progressBar = findViewById(R.id.progress1);
         mauth = FirebaseAuth.getInstance();
+
+        if(mauth.getCurrentUser()!=null){
+            startActivity(new Intent(getApplicationContext(), HomePage.class));
+            finish();
+        }
 
 
 
@@ -56,6 +64,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
             startActivity(new Intent(getApplicationContext(),Register.class));
+            finish();
             }
         });
 
@@ -71,8 +80,7 @@ public class LoginPage extends AppCompatActivity {
                 if(TextUtils.isEmpty(pass)){
                     mpass.setError("Password is Required");
                 }
-                mremember.setVisibility(View.VISIBLE);
-
+                progressBar.setVisibility(View.VISIBLE);
                 mauth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -87,6 +95,7 @@ public class LoginPage extends AppCompatActivity {
 
                     }
                 });
+
             }
         });
 

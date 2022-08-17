@@ -54,16 +54,14 @@ public class Register extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mStore = FirebaseFirestore.getInstance();
-        if(mAuth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(), HomePage.class));
-            finish();
-        }
+
 
         signintxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), LoginPage.class);
                 startActivity(intent);
+                finish();
             }
         });
         register.setOnClickListener(new View.OnClickListener() {
@@ -117,11 +115,12 @@ public class Register extends AppCompatActivity {
 
                             // Data Storing
                             userId = mAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = mStore.collection("user").document(userId);
+                            DocumentReference documentReference = mStore.collection("users").document(userId);
                             Map<String,Object> user = new HashMap<>();
                             user.put("Full name",name);
                             user.put("email",email);
                             user.put("phone",phone);
+                            user.put("ss",pass);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
@@ -130,10 +129,11 @@ public class Register extends AppCompatActivity {
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Log.d("OnFailure","User Profile is created of "+ e.toString());
+                                    Log.d("OnFailure","Error "+ e.toString());
                                 }
                             });
 
+                            // data storing end
 
 
 

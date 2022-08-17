@@ -18,10 +18,10 @@ public class Splash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent isplash=new Intent(getApplicationContext(),Register.class);
+                Intent isplash=new Intent(getApplicationContext(),LoginPage.class);
                 startActivity(isplash);
                 finish();
             }
-        },2000);
+        },1000);
     }
 }

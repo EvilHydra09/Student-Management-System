@@ -9,9 +9,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
 
@@ -31,8 +30,10 @@
             android:id="@+id/name"
             android:layout_width="300dp"
             android:layout_height="48dp"
-            android:layout_marginLeft="30dp"
+            android:layout_gravity="center"
             android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:background="@color/white"
             android:ems="10"
             android:fontFamily="@font/evil"
             android:hint="Name"
@@ -40,31 +41,35 @@
             android:shadowColor="@color/black"
             android:textColor="@color/black"
             android:textColorHighlight="#E91E63"
-            android:textColorHint="#CDFFFFFF"
+            android:textColorHint="#A4000000"
             android:textColorLink="@color/white" />
 
         <EditText
             android:id="@+id/phone"
             android:layout_width="300dp"
             android:layout_height="48dp"
-            android:layout_marginLeft="30dp"
+            android:layout_gravity="center"
             android:layout_marginTop="30dp"
+            android:padding="10dp"
             android:ems="10"
+            android:background="@color/white"
+            android:textColorHint="#A4000000"
             android:fontFamily="@font/evil"
             android:hint="Phone No"
             android:inputType="number"
             android:shadowColor="@color/black"
             android:textColor="@color/black"
             android:textColorHighlight="#E91E63"
-            android:textColorHint="#C6FFFFFF"
+
             android:textColorLink="@color/white" />
 
         <EditText
             android:id="@+id/email"
             android:layout_width="300dp"
             android:layout_height="48dp"
-            android:layout_marginLeft="30dp"
+            android:layout_gravity="center"
             android:layout_marginTop="30dp"
+            android:padding="10dp"
             android:autoLink="email"
             android:ems="10"
             android:fontFamily="@font/evil"
@@ -73,7 +78,8 @@
             android:shadowColor="@color/black"
             android:textColor="@color/black"
             android:textColorHighlight="#E91E63"
-            android:textColorHint="#C6FFFFFF"
+            android:background="@color/white"
+            android:textColorHint="#A4000000"
             android:textColorLink="@color/white" />
 
 
@@ -81,8 +87,9 @@
             android:id="@+id/pass"
             android:layout_width="300dp"
             android:layout_height="48dp"
-            android:layout_marginLeft="30dp"
+            android:layout_gravity="center"
             android:layout_marginTop="30dp"
+            android:padding="10dp"
             android:ems="10"
             android:fontFamily="@font/evil"
             android:hint="Password"
@@ -90,7 +97,8 @@
             android:shadowColor="@color/black"
             android:textColor="@color/black"
             android:textColorHighlight="#E91E63"
-            android:textColorHint="#C6FFFFFF"
+            android:background="@color/white"
+            android:textColorHint="#A4000000"
             android:textColorLink="@color/white" />
 
         <Button
@@ -99,10 +107,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-
+            android:backgroundTint="#2BB4FD"
+            android:textColor="@color/white"
             android:text="Register"
-
             android:visibility="visible"
+
             app:rippleColor="#673AB7" />
 
         <TextView
@@ -120,9 +129,9 @@
         <TextView
             android:id="@+id/signintxt"
             android:layout_width="wrap_content"
-            android:layout_gravity="center"
-
             android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
 
             android:fontFamily="@font/evil"
             android:text="Sign In"
