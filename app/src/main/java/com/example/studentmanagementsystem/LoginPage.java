@@ -16,6 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.developer.gbuttons.GoogleSignInButton;
 import com.example.studentmanagementsystem.databinding.ResetpassBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -32,7 +33,7 @@ public class LoginPage extends AppCompatActivity {
     CheckBox mremember;
     Button msign;
     ProgressBar progressBar;
-
+    GoogleSignInButton googleSignInButton;
     FirebaseAuth mauth;
     FirebaseFirestore mstore;
 
@@ -49,7 +50,7 @@ public class LoginPage extends AppCompatActivity {
         msignuptxt = findViewById(R.id.signuptxt);
         mforget = findViewById(R.id.forgetp);
         msign = findViewById(R.id.signinbut);
-        mremember = findViewById(R.id.remember);
+        googleSignInButton = findViewById(R.id.googleSignInButton);
         progressBar = findViewById(R.id.progress1);
         mauth = FirebaseAuth.getInstance();
 

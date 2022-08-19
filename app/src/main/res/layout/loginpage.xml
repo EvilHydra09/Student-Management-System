@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="64dp"
+
             android:fontFamily="@font/stream"
             android:gravity="center"
             android:letterSpacing="0.1"
@@ -31,7 +31,7 @@
             android:layout_width="310dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="70dp"
             android:autoLink="email"
             android:background="@drawable/customdrawable"
             android:drawableLeft="@drawable/ic_baseline_email_24"
@@ -61,6 +61,7 @@
             android:letterSpacing="0.1"
             android:text="Forget Passsword?"
             android:textColor="@color/black"
+            android:layout_marginBottom="5dp"
             android:textSize="16sp" />
 
 "
@@ -84,27 +85,12 @@
             android:textColorHint="#A4000000"
             android:textColorLink="@color/white" />
 
-        <CheckBox
-            android:id="@+id/remember"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-
-            android:buttonTint="#FFFFFF"
-            android:fontFamily="@font/evil"
-            android:text="Remember Me"
-            android:textColor="@color/white"
-
-            android:textSize="15dp"
-            tools:ignore="TouchTargetSizeCheck" />
-
         <Button
             android:id="@+id/signinbut"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/evil"
             android:text="Sign IN"
             android:textSize="20dp"
@@ -143,6 +129,15 @@
             android:layout_height="wrap_content"
             android:visibility="invisible"
             android:layout_gravity="center"/>
+
+        <com.developer.gbuttons.GoogleSignInButton
+            android:id="@+id/googleSignInButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/google_sign_up"
+            android:layout_gravity="center"
+            app:isDarkTheme="true" />
 
 
 
