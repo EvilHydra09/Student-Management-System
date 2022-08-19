@@ -25,27 +25,28 @@
             android:text="Sign In"
             android:textColor="@color/white"
             android:textSize="50sp" />
+
         <EditText
             android:id="@+id/emaill"
-            android:layout_width="300dp"
+            android:layout_width="310dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_marginTop="80dp"
             android:autoLink="email"
-            android:background="@color/white"
-            android:textColorHint="#A4000000"
-            android:ems="10"
-            android:fontFamily="@font/evil"
+            android:background="@drawable/customdrawable"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:drawablePadding="10dp"
+
+            android:ems="13"
+            android:fontFamily="@font/roboto_condensed_bold"
             android:hint="Email"
             android:inputType="textPersonName"
             android:shadowColor="@color/black"
+
             android:textColor="@color/black"
             android:textColorHighlight="#E91E63"
-
-            android:textColorLink="@color/white"
-            android:drawableLeft="@drawable/ic_baseline_email_24"
-            android:drawablePadding="10dp"
-            >
+            android:textColorHint="#A4000000"
+            android:textColorLink="@color/white">
 
         </EditText>
 
@@ -53,36 +54,35 @@
             android:id="@+id/forgetp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="70dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/roboto_condensed_bold"
             android:letterSpacing="0.1"
             android:text="Forget Passsword?"
             android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
 "
 
         <EditText
             android:id="@+id/passl"
-            android:layout_width="300dp"
+            android:layout_width="310dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
 
-            android:background="@color/white"
+            android:background="@drawable/customdrawable"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="10dp"
             android:ems="10"
-            android:fontFamily="@font/evil"
+            android:fontFamily="@font/roboto_condensed_bold"
             android:hint="Password"
             android:inputType="textPassword"
             android:shadowColor="@color/black"
             android:textColor="@color/black"
             android:textColorHighlight="#E91E63"
             android:textColorHint="#A4000000"
-            android:textColorLink="@color/white"
-            android:drawableLeft="@drawable/ic_baseline_lock_24"
-            android:drawablePadding="10dp"
-            />
+            android:textColorLink="@color/white" />
 
         <CheckBox
             android:id="@+id/remember"
@@ -108,6 +108,7 @@
             android:fontFamily="@font/evil"
             android:text="Sign IN"
             android:textSize="20dp"
+            android:background="@drawable/custombutton"
             android:backgroundTint="@color/black"
             android:textColor="@color/white"
             android:visibility="visible"
