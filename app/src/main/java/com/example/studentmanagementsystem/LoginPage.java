@@ -88,6 +88,7 @@ public class LoginPage extends AppCompatActivity {
                 }
                 if(TextUtils.isEmpty(pass)){
                     mpass.setError("Password is Required");
+                    return;
                 }
                 progressBar.setVisibility(View.VISIBLE);
                 mauth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
