@@ -12,11 +12,12 @@
         <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/drawable/customdrawable.xml" value="0.2265" />
         <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/drawable/gradient_list.xml" value="0.2195" />
         <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/font/roboto_condensed_bold.xml" value="0.11157407407407408" />
-        <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/layout/activity_home_page.xml" value="0.2101851851851852" />
+        <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/layout/activity_home_page.xml" value="0.264" />
         <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/layout/activity_homeactivity.xml" value="0.23645833333333333" />
         <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/layout/activity_main.xml" value="0.23645833333333333" />
-        <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/layout/activity_register.xml" value="0.4" />
+        <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/layout/activity_splash.xml" value="0.23645833333333333" />
+        <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/layout/header_draw.xml" value="0.264" />
         <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/layout/loginpage.xml" value="0.264" />
         <entry key="..\:/Android/StudentManagementSystem/app/src/main/res/layout/resetpass.xml" value="0.4" />
         <entry key="..\:/project1/Student-Management-System/Student-Management-System/app/src/main/res/layout/activity_homeactivity.xml" value="0.22826086956521738" />
