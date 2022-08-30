@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,9 +14,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.developer.gbuttons.GoogleSignInButton;
 import com.example.studentmanagementsystem.databinding.ResetpassBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -32,7 +35,7 @@ public class LoginPage extends AppCompatActivity {
     CheckBox mremember;
     Button msign;
     ProgressBar progressBar;
-
+    GoogleSignInButton googleSignInButton;
     FirebaseAuth mauth;
     FirebaseFirestore mstore;
 
@@ -40,8 +43,14 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
+        // Background Work
+        ScrollView scrollView = findViewById(R.id.gradient_listback);
+        AnimationDrawable animationDrawable = (AnimationDrawable) scrollView.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
 
-
+        //id
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         memail = findViewById(R.id.emaill);
         mpass = findViewById(R.id.passl);
@@ -49,7 +58,7 @@ public class LoginPage extends AppCompatActivity {
         msignuptxt = findViewById(R.id.signuptxt);
         mforget = findViewById(R.id.forgetp);
         msign = findViewById(R.id.signinbut);
-        mremember = findViewById(R.id.remember);
+        googleSignInButton = findViewById(R.id.googleSignInButton);
         progressBar = findViewById(R.id.progress1);
         mauth = FirebaseAuth.getInstance();
 
@@ -79,6 +88,7 @@ public class LoginPage extends AppCompatActivity {
                 }
                 if(TextUtils.isEmpty(pass)){
                     mpass.setError("Password is Required");
+                    return;
                 }
                 progressBar.setVisibility(View.VISIBLE);
                 mauth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -110,7 +120,10 @@ public class LoginPage extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         String mail = binding.enteremailreset.getText().toString();
-
+                            if (TextUtils.isEmpty(mail)) {
+                                binding.enteremailreset.setError("Enter The Email");
+                                return;
+                            }
                             mauth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
@@ -119,12 +132,11 @@ public class LoginPage extends AppCompatActivity {
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(LoginPage.this, "Error "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginPage.this, "Error " + e.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             });
+                        }
 
-
-                    }
                 });
                 dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
                 dialog.show();
